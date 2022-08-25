@@ -1,0 +1,292 @@
+@import "../Base/Colours.scss";
+@import "./Mixin.scss";
+@import "../Typography/Mixin.scss";
+.rootui-custom {
+  .form-control {
+    &.error {
+      border: solid 1px $CT-T900;
+      ~ div {
+        position: absolute;
+        width: 140px;
+        height: 32px;
+        text-align: right;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        right: 30px;
+        bottom: 3px;
+        color: $CT-T900;
+
+        &.v2{
+        width: 310px;
+        bottom: -34px;
+        }
+      }
+    }
+  }
+}
+
+.tb-A {
+  width: 639px;
+  height: 75px;
+  padding: 27px 30px;
+  border-radius: 8px;
+  border: solid 1px $CT-B001;
+  background-color: $CT-B100;
+  border-top-right-radius: 0;
+  transition: border 0.35s;
+  &.true {
+    background-color: $CT-B050;
+    border: solid 1px $CT-P100;
+
+    & ~ .placeholder-A {
+      @include placeholder-animation();
+      background-color: $CT-B050;
+
+      left: 60px;
+    }
+  }
+
+  &:focus {
+    background-color: $CT-B050;
+    border: solid 1px $CT-P100;
+
+    & ~ .placeholder-A {
+      @include placeholder-animation();
+      background-color: $CT-B050;
+      left: 60px;
+    }
+  }
+
+  &.error {
+    border: solid 1px $CT-T900;
+    border-top-right-radius: 0;
+    ~ div {
+      position: absolute;
+      width: 140px;
+      height: 100%;
+      text-align: right;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      top: calc(50% - 37.5px);
+      left: 485px;
+      color: $CT-T900;
+    }
+    ~ label {
+      color: $CT-T900;
+    }
+    & ~ .placeholder-B {
+      color: $CT-T900;
+    }
+  }
+  &.v2 {
+    &.error {
+      ~ div {
+        width: auto;
+        right: 25px;
+        left: auto;
+      }
+    }
+  }
+  &.v3 {
+    &.error {
+      ~ div {
+        left: 465px;
+      }
+    }
+  }
+}
+.tb-B {
+  width: 360px;
+  height: 75px;
+  padding: 25px 36px;
+  border-radius: 10px;
+  border: solid 1px $CT-P100;
+  border-top-right-radius: 0;
+  transition: border 0.35s;
+  &.true {
+    border: solid 1px $CT-P100;
+
+    & ~ .placeholder-B {
+      @include placeholder-animation();
+      background-color: #ffffff;
+      left: 19px;
+    }
+  }
+
+  &:focus {
+    background-color: #ffffff;
+    border: solid 1px $CT-P100;
+
+    & ~ .placeholder-B {
+      @include placeholder-animation();
+      background-color: #ffffff;
+      left: 19px;
+    }
+  }
+
+  &.error {
+    border: solid 1px $CT-T900;
+    border-top-right-radius: 0;
+    ~ div {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      max-width: 135px;
+      top: calc(50% - 37.5px);
+      right: 25px;
+      text-align: right;
+      color: $CT-T900;
+    }
+    ~ label {
+      color: $CT-T900;
+    }
+    & ~ .placeholder-B {
+      color: $CT-T900;
+    }
+  }
+}
+.requestStep6,
+.requestStep7,
+.requestStep8 {
+  .tb-A {
+    width: 594px;
+  }
+}
+
+@mixin common-lg() {
+}
+
+@mixin common-md() {
+}
+
+@mixin common-sm1-sm2() {
+  .f-answer-group-A,
+  .f-answer-group-B {
+    .tb-A {
+      width: 100%;
+      &.true {
+        & ~ .placeholder-A {
+          left: 17px;
+        }
+      }
+
+      &:focus {
+        & ~ .placeholder-A {
+          left: 17px;
+        }
+      }
+      &.error {
+        ~ div {
+          height: 100%;
+          left: 440px;
+        }
+      }
+      &.v2 {
+        &.error {
+          ~ div {
+            width: auto;
+            right: 25px;
+            left: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin common-xs1-xs2() {
+  .tb-A {
+    width: 100%;
+    height: 59px;
+    padding: 17px 24px;
+
+    &.true {
+      & ~ .placeholder-A {
+        top: 22px;
+        left: 38px;
+      }
+    }
+
+    &:focus {
+      & ~ .placeholder-A {
+        top: 22px;
+        left: 38px;
+      }
+    }
+    &.error {
+      ~ div {
+        right: 25px;
+        left: auto;
+        top: calc(50% - 29.5px);
+      }
+    }
+    &.v3 {
+      &.error {
+        ~ div {
+          left: auto;
+        }
+      }
+    }
+  }
+
+  .requestStep6,
+  .requestStep7,
+  .requestStep8 {
+    .tb-A {
+      width: 100%;
+    }
+  }
+  .tb-B {
+    width: 100%;
+    height: 59px;
+    padding: 17px 24px;
+    &.true {
+      & ~ .placeholder-A {
+        top: 22px;
+        left: 38px;
+      }
+    }
+
+    &:focus {
+      & ~ .placeholder-A {
+        top: 22px;
+        left: 38px;
+      }
+    }
+    &.error {
+      ~ div {
+        max-width: 110px;
+        top: calc(50% - 29.5px);
+        right: 15px;
+      }
+    }
+  }
+}
+
+@media all and (max-width: #{($mq-xs2 - 1) + "px"}) {
+  @include common-xs1-xs2();
+}
+
+@media all and (min-width: #{$mq-xs2 + "px"}) and (max-width: #{($mq-sm1 - 1) + "px"}) {
+  @include common-xs1-xs2();
+}
+
+@media all and (min-width: #{$mq-sm1 + "px"}) and (max-width: #{($mq-sm2 - 1) + "px"}) {
+  @include common-sm1-sm2();
+}
+
+@media all and (min-width: #{$mq-sm2 + "px"}) and (max-width: #{($mq-md - 1) + "px"}) {
+  @include common-sm1-sm2();
+}
+
+@media all and (min-width: #{$mq-md + "px"}) and (max-width: #{($mq-lg - 1) + "px"}) {
+  @include common-lg();
+}
+
+@media all and (min-width: #{$mq-lg + "px"}) {
+  @include common-lg();
+}

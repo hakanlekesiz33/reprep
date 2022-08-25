@@ -1,0 +1,20 @@
+#ticketDetails {
+  .col-sm {
+    &.device-info {
+      max-height: 815px;
+      flex-basis: auto;
+      width: 35%;
+    }
+    &.timeline {
+      flex-basis: auto;
+      width: 65%;
+      .card {
+        max-height: 815px;
+        overflow: auto;
+      }
+    }
+    .rui-page-title{
+      padding: 0;
+    }
+  }
+}

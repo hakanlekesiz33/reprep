@@ -1,0 +1,381 @@
+@import "../Base/Colours.scss";
+@import "../Base/Globals.scss";
+@import "./Mixin.scss";
+@import "../Typography/Mixin.scss";
+
+//select2 classları
+.css-2b097c-container {
+  width: 666px;
+  height: 75px;
+  .css-yk16xz-control,
+  .css-1pahdxg-control {
+    height: 75px;
+    border-radius: 16px;
+    background-color: $CT-B100;
+    border: none;
+    box-shadow: none;
+    border-top-right-radius: 0;
+    z-index: 2;
+    cursor: pointer;
+    transition: background-color 0.25s;
+    &:hover {
+      border: none;
+      box-shadow: none;
+    }
+  
+  }
+
+  .css-1pahdxg-control {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border: solid 1px $CT-B200;
+    background-color: $CT-B050;
+    &:hover {
+      border: solid 1px $CT-B200;
+      //border-bottom: none;
+      
+    }
+   
+    .css-1hwfws3 {
+      background-color: $CT-B100;
+      border-radius: 8px;
+      border-top-right-radius: 0;
+    }
+  }
+  //placeholder
+  .css-1hwfws3 {
+    height: calc(100% - 12px);
+    margin: 0 72px 0 13px;
+    padding-left: 50px;
+
+    .css-1wa3eu0-placeholder {
+      @include standard-text($CT-B800);
+    }
+    .css-1uccc91-singleValue {
+      @include standard-text($CT-B800);
+    }
+  }
+  //select basınca açılan optionslar
+  .css-26l3qy-menu {
+    border-radius: 30px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    overflow: hidden;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 8px;
+    padding-top: 10px;
+    z-index: 9999;
+    background-color: $CT-B050;
+    border: solid 1px $CT-B200;
+    box-shadow: none;
+    border-top: none;
+    .css-t35glz-MenuList {
+      .css-1n7v3ny-option {
+        height: 41px;
+        border-radius: 20px;
+        border-top-left-radius: 0;
+        border-bottom-right-radius: 0;
+        background-color: $CT-B050;
+        @include small-text($CT-P800);
+    
+        &:active {
+          height: 41px;
+          background-color: $CT-B050;
+        }
+        &:hover {
+          color: $CT-P800;
+          cursor: pointer;
+        }
+      }
+      .css-9gakcf-option {
+        height: 41px;
+        border-radius: 20px;
+        border-top-left-radius: 0;
+        border-bottom-right-radius: 0;
+        background-color: $CT-B050;
+        opacity: 0.75;
+        color: $CT-P800;
+    
+        &:active {
+          height: 41px;
+        }
+      }
+      .css-yt9ioa-option {
+        height: 41px;
+        &:active {
+          height: 41px;
+          background-color: $CT-B050;
+        }
+      }
+
+
+
+      &::-webkit-scrollbar {
+        width: 20px;
+      }
+      &::-webkit-scrollbar-track {
+        background-color: rgba(216, 216, 216, 0.3);
+        border-radius: 10px;
+        border-left: 9px solid $CT-B050;
+        border-right: 9px solid $CT-B050;
+      }
+      &::-webkit-scrollbar-thumb {
+        border-radius: 8.5px;
+        background-color: #d8d8d8;
+        border-left: 8px solid $CT-B050;
+        border-right: 8px solid $CT-B050;
+      }
+
+    }
+  }
+
+  .css-w8afj7-Input {
+  }
+
+  .css-1okebmr-indicatorSeparator {
+    display: none;
+  }
+  .css-tlfecz-indicatorContainer {
+    position: absolute;
+    right: 30px;
+    color: #000000;
+    &:hover {
+      color: #000000;
+      right: 30px;
+    }
+    .css-tj5bde-Svg {
+      width: 18px !important;
+      height: 18px !important;
+    }
+  }
+  .css-1g48xl4-IndicatorsContainer {
+    .css-1gtu0rj-indicatorContainer {
+      position: absolute;
+      right: 30px;
+      color: #000000;
+      &:hover {
+        color: #000000;
+        right: 30px;
+      }
+      .css-tj5bde-Svg {
+        width: 18px !important;
+        height: 18px !important;
+      }
+    }
+  }
+  //options
+  .css-1ml51p6-MenuList {
+    margin-right: 50px;
+    padding: 0 30px 30px;
+    @include small-text($CT-B700);
+
+    &::-webkit-scrollbar {
+      width: 7px;
+    }
+    &::-webkit-scrollbar-track {
+      margin-bottom: 30px;
+      width: 3px !important;
+      border-radius: 3.5px;
+      background-color: rgba(216, 216, 216, 0.1);
+    }
+    &::-webkit-scrollbar-thumb {
+      margin-bottom: 30px;
+      width: 3px !important;
+      height: 40%;
+      border-radius: 3.5px;
+      background-color: #d8d8d8;
+    }
+  }
+  //option üzerine hover yapılınca
+ 
+  .css-1imi3mr-NoOptionsMessage {
+  }
+}
+.css-2b097c-container {
+  .css-g1d714-ValueContainer {
+    padding: 2px 0 2px 30px;
+  }
+}
+.inputSelect-typeA {
+  width: 554px;
+  height: 75px;
+  padding: 27px 30px;
+  border-radius: 10px;
+  border: solid 1px #efefef;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+  .select2Label {
+    width: 130px;
+    height: 15px;
+    position: absolute;
+    left: 30px;
+    top: calc(50% - 7.5px);
+    z-index: 3;
+  }
+
+  .css-2b097c-container {
+    width: calc(100% - 130px);
+    margin-left: 130px;
+    .css-1hwfws3 {
+      padding-left: 0;
+    }
+    .css-26l3qy-menu {
+      z-index: 5;
+    }
+  }
+}
+
+.f-answer-group-A {
+  &.error {
+    .css-2b097c-container {
+      .css-yk16xz-control,
+      .css-1pahdxg-control {
+        border: solid 1px $CT-T900;
+        border-top-right-radius: 0;
+      }
+    }
+  }
+}
+.f-select-group-A {
+  display: flex;
+  justify-content: space-between;
+  width: 594px;
+  margin-left: 36px;
+  .f-answer-group-A {
+    padding: 0;
+    .css-2b097c-container {
+      width: 280px;
+    }
+    &.f-city-select{
+      .css-2b097c-container {
+        width: 594px;
+      }
+    }
+    .css-tlfecz-indicatorContainer {
+      right: 17px;
+    }
+    .css-1gtu0rj-indicatorContainer {
+      right: 17px;
+    }
+  }
+}
+
+@mixin common-lg() {
+}
+
+@mixin common-md() {
+}
+
+@mixin common-sm1-sm2() {
+  .css-2b097c-container {
+    width: 603px;
+  }
+  .f-select-group-A {
+    width: 603px;
+    margin-left: auto;
+    .f-answer-group-A {
+      width: auto;
+      margin-left: 0;
+      &.f-city-select{
+        .css-2b097c-container {
+          width: 604px;
+        }
+      }
+      .css-2b097c-container {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@mixin common-xs1-xs2() {
+  .css-2b097c-container {
+    width: 100%;
+    height: 59px;
+    margin-left: auto;
+    .css-1hwfws3 {
+      margin: 0 40px 0 10px;
+      padding-left: 20px;
+    }
+    .css-yk16xz-control,
+    .css-1pahdxg-control {
+      height: 59px;
+      border-radius: 8px;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+      .css-1g48xl4-IndicatorsContainer {
+        .css-tlfecz-indicatorContainer {
+          right: 17px;
+        }
+        .css-1gtu0rj-indicatorContainer {
+          right: 17px;
+        }
+      }
+    }
+    .css-1n7v3ny-option {
+      color: $CT-B800;
+    }
+  }
+  .css-1ml51p6-MenuList {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    &::-webkit-scrollbar-track {
+      display: none;
+    }
+    &::-webkit-scrollbar-thumb {
+      display: none;
+    }
+  }
+  .f-select-group-A {
+    flex-direction: column;
+    width: 100%;
+    margin-left: 0;
+    padding: 0px 12px;
+    .f-answer-group-A {
+      width: 100%;
+      margin-left: 0;
+      .css-2b097c-container {
+        width: 100%;
+        margin-right: 0;
+      }
+      &.f-city-select{
+        .css-2b097c-container {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: #{($mq-xs2 - 1) + "px"}) {
+  @include common-xs1-xs2();
+}
+
+@media all and (min-width: #{$mq-xs2 + "px"}) and (max-width: #{($mq-sm1 - 1) + "px"}) {
+  @include common-xs1-xs2();
+}
+
+@media all and (min-width: #{$mq-sm1 + "px"}) and (max-width: #{($mq-sm2 - 1) + "px"}) {
+  @include common-sm1-sm2();
+}
+
+@media all and (min-width: #{$mq-sm2 + "px"}) and (max-width: #{($mq-md - 1) + "px"}) {
+  @include common-sm1-sm2();
+}
+
+@media all and (min-width: #{$mq-md + "px"}) and (max-width: #{($mq-lg - 1) + "px"}) {
+  @include common-lg();
+}
+
+@media all and (min-width: #{$mq-lg + "px"}) {
+  @include common-lg();
+}

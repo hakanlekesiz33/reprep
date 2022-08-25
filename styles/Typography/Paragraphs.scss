@@ -1,0 +1,42 @@
+﻿@import "../Base/Colours.scss";
+@import "../Base/Globals.scss";
+@import "../Base/Media.scss";
+@import "./Mixin.scss";
+
+
+.pr-A {
+    @include standard-text($CT-B900);
+    line-height: 1.5;
+  }
+  .pr-B {
+    @include small-text-2(#999);
+    line-height: 1.5;
+  }
+  
+@media all and (max-width: #{($mq-xs2 - 1) + "px"}) {
+  .pr-A {
+    line-height: 1.29;
+  }
+}
+
+@media all and (min-width: #{$mq-xs2 + "px"}) and (max-width: #{($mq-sm1 - 1) + "px"}) {
+  .pr-A {
+    line-height: 1.29;
+  }
+}
+
+@media all and (min-width: #{$mq-sm1 + "px"}) and (max-width: #{($mq-sm2 - 1) + "px"}) {
+
+}
+
+@media all and (min-width: #{$mq-sm2 + "px"}) and (max-width: #{($mq-md - 1) + "px"}) {
+
+}
+
+@media all and (min-width: #{$mq-md + "px"}) and (max-width: #{($mq-lg - 1) + "px"}) {
+
+}
+
+@media all and (min-width: #{$mq-lg + "px"}) {
+  
+}

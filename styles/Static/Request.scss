@@ -1,0 +1,605 @@
+@import "../Base/Colours.scss";
+@import "../Base/Globals.scss";
+
+$transitionTime: 0.5s;
+$transitionDelay: 0.5s;
+$transitionOutDelay: 0.35s;
+
+.requestFinalSummary {
+  background-color: $CT-B050;
+  .citem-01 {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    &.move-down {
+      .translateY-animation {
+        transition: opacity $transitionOutDelay,
+          transform $transitionTime $transitionOutDelay;
+      }
+    }
+    &.move-up {
+      .translateY-animation {
+        transition: transform $transitionTime 0s;
+      }
+    }
+    &.active {
+      .f-submit-group-B,
+      .f-submit-group-A {
+        display: none;
+      }
+    }
+    &.active2 {
+      .f-submit-group-B,
+      .f-submit-group-A {
+        display: none;
+      }
+    }
+    &.active3 {
+      .f-submit-group-B,
+      .f-submit-group-A {
+        display: none;
+      }
+    }
+  }
+  .citem-02 {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    visibility: hidden;
+    transition: transform $transitionTime,
+      visibility $transitionTime $transitionOutDelay;
+
+    .translateY-animation {
+      opacity: 0;
+      transition: opacity $transitionTime 0s;
+    }
+    &.move-down {
+      .translateY-animation {
+        transition: opacity $transitionOutDelay,
+          transform $transitionTime $transitionOutDelay;
+      }
+    }
+    &.move-up {
+      .translateY-animation {
+        transition: transform $transitionTime 0s;
+      }
+    }
+    .f-submit-group-A {
+      display: none;
+    }
+    &.active {
+      //ilk görüntüye çıkması
+      visibility: visible;
+      transition: transform $transitionTime, opacity $transitionOutDelay;
+      .translateY-animation {
+        opacity: 1;
+        transition: opacity $transitionTime $transitionDelay,
+          transform $transitionTime $transitionOutDelay;
+      }
+      .f-submit-group-B,
+      .f-submit-group-A {
+        display: flex;
+        align-items: center;
+      }
+    }
+    &.active2 {
+      //ilk yukarı hareketi
+      visibility: visible;
+      transition: transform $transitionTime;
+      .translateY-animation {
+        opacity: 1;
+        transition: transform $transitionTime 0s;
+      }
+      .f-submit-group-B,
+      .f-submit-group-A {
+        display: none;
+      }
+    }
+    &.active3 {
+      visibility: visible;
+      transition: transform $transitionTime, opacity $transitionOutDelay,
+        visibility $transitionOutDelay;
+      .translateY-animation {
+        opacity: 1;
+        transition: transform $transitionTime 0s;
+      }
+      .f-submit-group-B,
+      .f-submit-group-A {
+        display: none;
+      }
+    }
+  }
+  .citem-03 {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    visibility: hidden;
+    transition: transform $transitionTime,
+      visibility $transitionTime $transitionOutDelay;
+
+    .translateY-animation {
+      opacity: 0;
+      transition: opacity $transitionTime 0s;
+    }
+    &.move-down {
+      .translateY-animation {
+        transition: transform $transitionTime $transitionOutDelay;
+      }
+    }
+    &.move-up {
+      .translateY-animation {
+        transition: transform $transitionTime 0s;
+      }
+    }
+    .forgetPassword {
+      display: flex;
+      padding: 0 65px 0 65px;
+      margin-top: 15px;
+      width: 639px;
+      justify-content: space-between;
+      .chk-B {
+        justify-content: flex-start;
+      }
+      .f-imei-info-area {
+        left: 625px;
+      }
+    }
+    .f-submit-group-A {
+      display: none;
+    }
+
+    &.active2 {
+      //ilk görüntüye çıkması
+      visibility: visible;
+      transition: opacity $transitionOutDelay;
+      .translateY-animation {
+        opacity: 1;
+        transition: opacity $transitionTime $transitionDelay;
+      }
+      .f-submit-group-B,
+      .f-submit-group-A {
+        display: flex;
+        align-items: center;
+      }
+    }
+    &.active3 {
+      //ilk yukarı hareketi
+      visibility: visible;
+      transition: transform $transitionTime, opacity $transitionOutDelay,
+        visibility $transitionOutDelay;
+      .translateY-animation {
+        opacity: 1;
+        transition: transform $transitionTime 0s;
+      }
+      .f-submit-group-B,
+      .f-submit-group-A {
+        display: none;
+      }
+    }
+  }
+  .citem-04 {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    visibility: hidden;
+    transition: visibility $transitionOutDelay, opacity $transitionOutDelay;
+
+    .translateY-animation {
+      opacity: 0;
+      transition: opacity $transitionTime 0s;
+    }
+    &.active3 {
+      visibility: visible;
+      transition: opacity $transitionOutDelay, visibility $transitionOutDelay;
+      .translateY-animation {
+        opacity: 1;
+        transition: opacity $transitionTime $transitionDelay;
+      }
+    }
+  }
+  .summaryStep {
+    &.f-answer {
+      padding-top: 70px;
+      .f-question-A {
+        margin: 0 0 0 180px;
+        width: 575px;
+      }
+    }
+
+    .summaryTables {
+      height: calc(100% - 188px);
+      overflow: auto;
+      margin: 40px 0 0 30px;
+      padding: 30px 0 20px 50px;
+      &::-webkit-scrollbar {
+        width: 20px;
+      }
+      &::-webkit-scrollbar-track {
+        background-color: rgba(216, 216, 216, 0.3);
+        border-radius: 10px;
+        border-left: 9px solid #fafafa;
+        border-right: 9px solid #fafafa;
+      }
+      &::-webkit-scrollbar-thumb {
+        border-radius: 8.5px;
+        background-color: #d8d8d8;
+        border-left: 8px solid #fafafa;
+        border-right: 8px solid #fafafa;
+      }
+      .summaryTable {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 680px;
+        margin-bottom: 10px;
+        padding: 19px 30px;
+        border-radius: 10px;
+        box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.05);
+        border: solid 1px #f2f2f2;
+        background-color: #fafafa;
+        .cbox-01 {
+          width: 50%;
+          margin-bottom: 38px;
+          opacity: 0.5;
+        }
+        .cbox-02 {
+          width: 50%;
+          margin-bottom: 38px;
+          a {
+            display: block;
+            text-align: right;
+          }
+        }
+        .t-container {
+          width: 100%;
+        }
+        .cbox-03 {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          flex-wrap: wrap;
+
+          .cbox-03-A {
+            width: 50%;
+            margin-bottom: 20px;
+            li {
+              padding-right: 30px;
+              &:first-child {
+                opacity: 0.5;
+              }
+              .f-level2 {
+                display: flex;
+                align-items: center;
+                opacity: 1;
+                margin-top: 5px;
+                .f-image {
+                  width: 30px;
+                  height: 30px;
+                }
+                .f-value {
+                  margin-left: 15px;
+                  flex: 1;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  overflow: hidden;
+                }
+              }
+              .f-delete {
+                margin-left: 15px;
+                color: #44d7b6;
+                cursor: pointer;
+              }
+            }
+            .f-show-pdf {
+              cursor: pointer;
+            }
+          }
+        }
+        &.v2 {
+          .cbox-02,
+          .cbox-01 {
+            margin-bottom: 38px;
+          }
+        }
+      }
+      .backdrop {
+        opacity: 0.75;
+      }
+      #pattern-wrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 129px;
+        height: auto;
+        background-color: #fff;
+
+        div[id*="dot-"] {
+          margin: 20px;
+          width: 3px;
+          height: 3px;
+          background-color: #aaaaaa;
+          &.active {
+            background-color: #fff;
+          }
+        }
+
+        div[class*="line-"] {
+          background-color: #44d7b6;
+          position: absolute;
+          height: 6px;
+          border-radius: 10px;
+        }
+      }
+      .showPassLnk {
+        margin-left: 10px;
+      }
+      .showPassValue {
+        display: inline-block;
+        width: 100px;
+      }
+      .showPatternCode {
+        &.true {
+          display: block;
+          display: flex;
+          align-items: center;
+        }
+        &.false {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.clickGrandiant {
+  display: none;
+}
+.withGrandiant {
+  .clickGrandiant {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: calc(50% - 510px);
+    height: 147px;
+    width: 830px;
+    z-index: 10;
+    opacity: 0;
+    cursor: pointer;
+  }
+}
+
+@mixin common-lg() {
+}
+
+@mixin common-md() {
+}
+
+@mixin common-sm1-sm2() {
+  .requestFinalSummary {
+    .citem-03 {
+      .forgetPassword {
+        width: 603px;
+        padding: 15px 65px 0 120px;
+
+        .f-imei-info-area {
+          left: 645px;
+        }
+      }
+    }
+  }
+
+  .withGrandiant {
+    .clickGrandiant {
+      display: none;
+    }
+  }
+
+  body.pg-B {
+    header {
+      top: 0;
+      position: absolute;
+      width: 100%;
+    }
+    .iconSummary {
+      display: none;
+    }
+    #content-wrapper {
+      height: auto;
+      flex-direction: column-reverse;
+      #request.requestFinalSummary {
+        height: auto;
+        width: 100%;
+        margin-top: 20px;
+        .componentAnimation {
+          height: auto;
+        }
+        .summaryStep.f-answer {
+          height: auto;
+          padding-top: 30px;
+          .f-question-A {
+            width: 80%;
+            max-width: 700px;
+            margin: 0 auto;
+          }
+          .summaryTables {
+            height: auto;
+            width: 90%;
+            max-width: 700px;
+            margin: 30px auto 50px;
+            .summaryTable {
+              width: 100%;
+              .cbox-03-A {
+                li {
+                  text-overflow: ellipsis;
+                  overflow: hidden;
+                }
+              }
+            }
+          }
+        }
+      }
+      #summary-wrapper {
+        height: auto;
+        width: 700px;
+        position: relative;
+        margin-top: 100px;
+        margin-left: calc(50% - 350px);
+        .postRequest {
+          padding: 40px 30px;
+          .f-model-img {
+            width: 300px;
+            height: 322px;
+            margin: 10px auto 30px auto;
+          }
+          .submitRequest {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin common-xs1-xs2() {
+  body.pg-A #content-wrapper {
+    overflow-y: auto;
+    #request {
+      margin-top: 90px;
+      .f-answer {
+        overflow-y: unset;
+      }
+    }
+  }
+
+  .requestFinalSummary {
+    .citem-01 {
+      .requestStep3 {
+        .f-answer-group-A {
+          height: calc(100% - 285px);
+          overflow: auto;
+        }
+      }
+    }
+    .citem-03 {
+      .forgetPassword {
+        width: 100%;
+        padding: 15px 25px 0 20px;
+
+        .f-imei-info-area {
+          left: auto;
+          right: 25px;
+        }
+      }
+    }
+  }
+  .withGrandiant {
+    .clickGrandiant {
+      display: none;
+    }
+  }
+  .requestStep1 {
+    .btnFacebook,
+    .btnGoogle {
+      width: 100%;
+    }
+  }
+  body.pg-B {
+    header {
+      top: 0;
+    }
+    .iconSummary {
+      display: none;
+    }
+    #content-wrapper {
+      height: auto;
+      flex-direction: column-reverse;
+      #final.requestFinalSummary,
+      #request.requestFinalSummary {
+        height: auto;
+        width: 100%;
+        margin-top: 20px;
+        .componentAnimation {
+          height: auto;
+        }
+        .summaryStep.f-answer {
+          height: auto;
+          padding-top: 20px;
+          .f-question-A {
+            width: 80%;
+            max-width: 450px;
+            margin: 0 auto;
+          }
+          .summaryTables {
+            height: auto;
+            width: 90%;
+            max-width: 450px;
+            margin: 30px auto 50px;
+            .summaryTable {
+              width: 100%;
+              .cbox-03-A {
+                li {
+                  text-overflow: ellipsis;
+                  overflow: hidden;
+                }
+              }
+            }
+          }
+        }
+      }
+      #summary-wrapper {
+        height: auto;
+        width: 100%;
+        max-width: 450px;
+        position: relative;
+        margin-top: 90px;
+        .postRequest {
+          padding: 30px 20px;
+          .f-model-img {
+            width: 200px;
+            height: 212px;
+            margin: 10px auto 30px auto;
+          }
+          .submitRequest {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .requestStep11,
+  .citem-02 .requestStep4,
+  .citem-02 .requestStep10 {
+    .cb-A .checkBoxContainer,
+    .rb-A .radioContainer {
+      margin-right: 0;
+      width: 100%;
+      label {
+        justify-content: flex-start;
+      }
+    }
+  }
+}
+
+@media all and (max-width: #{($mq-xs2 - 1) + "px"}) {
+  @include common-xs1-xs2();
+}
+
+@media all and (min-width: #{$mq-xs2 + "px"}) and (max-width: #{($mq-sm1 - 1) + "px"}) {
+  @include common-xs1-xs2();
+}
+
+@media all and (min-width: #{$mq-sm1 + "px"}) and (max-width: #{($mq-sm2 - 1) + "px"}) {
+  @include common-sm1-sm2();
+}
+
+@media all and (min-width: #{$mq-sm2 + "px"}) and (max-width: #{($mq-md - 1) + "px"}) {
+  @include common-sm1-sm2();
+}
+
+@media all and (min-width: #{$mq-md + "px"}) and (max-width: #{($mq-lg - 1) + "px"}) {
+  @include common-lg();
+}
+
+@media all and (min-width: #{$mq-lg + "px"}) {
+  @include common-lg();
+}

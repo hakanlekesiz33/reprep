@@ -1,0 +1,51 @@
+﻿@import "../Base/Colours.scss";
+
+@mixin font-face-mixin {
+  font-family: "Roboto";
+  font-style: normal;
+}
+
+@font-face {
+  src: url("/static/Content/Files/Fonts/Roboto/Roboto-Bold.ttf");
+  font-weight: bold;
+  @include font-face-mixin;
+}
+
+@font-face {
+  src: url("/static/Content/Files/Fonts/Roboto/Roboto-Medium.ttf");
+  font-weight: 500;
+  @include font-face-mixin;
+}
+
+@font-face {
+  src: url("/static/Content/Files/Fonts/Roboto/Roboto-Regular.ttf");
+  font-weight: normal;
+  @include font-face-mixin;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+textarea {
+  @include font-face-mixin;
+  font-weight: normal;
+  font-size: 14px;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: normal;
+  color: $CT-B600;
+}
+
+a {
+  color: $CT-B700;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  &:hover {
+    text-decoration: none;
+    opacity: 0.9;
+  }
+}

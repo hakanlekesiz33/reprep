@@ -1,0 +1,305 @@
+@import "../Base/Colours.scss";
+@import "../Base/Globals.scss";
+//-> Default styling values
+
+.summary-wrapper {
+  opacity: 0;
+  width: 300px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #ffffff;
+  transition:opacity 0.3s, transform 0.3s;
+  overflow-y: auto;
+  &.active{
+    opacity: 1;
+  }
+  .basketItems {
+    overflow: auto;
+    max-height: 100%;
+    padding: 50px 25px;
+    .device-info {
+      margin-bottom: 15px;
+      .model-logo {
+        transition: all 0.3s;
+        width: 163px;
+        margin: 0 auto;
+      }
+      .sub-device-info {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        .model-edit{
+          width: 100%;
+          text-align: right;
+        }
+        .brand-logo {
+          width: 20%;
+          margin: 0 auto;
+        }
+        .model-name {
+          width: 100%;
+          padding-left: 15px;
+          text-align: center;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+    }
+    .citemA {
+      width: 100%;
+      padding: 17px 0;
+      border-bottom: 1px solid rgba(216, 216, 216, 0.5);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      .citemA-01 {
+        width: 50%;
+      }
+      .citemA-02 {
+        width: 50%;
+        text-align: right;
+        cursor: pointer;
+        z-index: 900;
+      }
+      .citemA-03 {
+        width: 100%;
+        margin-top: 7px;
+      }
+    }
+    .citemB {
+      width: 100%;
+      padding: 17px 0;
+      border-bottom: 1px solid rgba(216, 216, 216, 0.5);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      .cbox01 {
+        width: 100%;
+      }
+      .cbox02 {
+        width: 100%;
+        margin-top: 10px;
+        .cbox02-A {
+          width: calc(100% - 45px);
+        }
+        .cbox02-B {
+          width: calc(100% - 45px);
+          .cbox02-B-01 {
+            font-weight: 600;
+          }
+        }
+        .cbox02-C {
+          height: 10px;
+          position: absolute;
+          right: 0;
+          top: calc(50% - 5px);
+          cursor: pointer;
+        }
+      }
+      &.basketItem4 {
+        .cbox01 {
+          margin-bottom: 7px;
+        }
+        .cbox02 {
+          margin-top: 3px;
+        }
+      }
+    }
+    .citemC {
+      width: 100%;
+      text-align: right;
+      .citemC-01 {
+        margin-top: 13px;
+      }
+      .citemC-02 {
+        margin-top: 7px;
+      }
+    }
+  }
+
+  .postRequest {
+    padding: 100px 50px 50px;
+    .f-model-img {
+      width: 402px;
+      height: 426px;
+      margin: 50px auto 150px auto;
+    }
+    
+    .total {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 740px;
+      height: 75px;
+      border-radius: 37.5px;
+      border-top-left-radius: 0;
+      border-bottom-right-radius: 0;
+      background-color: #f9f9f9;
+      margin-bottom: 10px;
+    }
+    .submitRequest {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 740px;
+      height: 75px;
+      margin-top: 30px;
+      border-radius: 37.5px;
+      border-top-left-radius: 0;
+      background-color: #44d7b6;
+    }
+  }
+  &::-webkit-scrollbar {
+    width: 20px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: rgba(216, 216, 216, 0.3);
+    border-radius: 10px;
+    border-left: 9px solid $CT-B050;
+    border-right: 9px solid $CT-B050;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 8.5px;
+    background-color: #d8d8d8;
+    border-left: 8px solid $CT-B050;
+    border-right: 8px solid $CT-B050;
+  }
+}
+body {
+  &.pg-A {
+    height: 100%;
+    #__next,
+    #page-wrapper,
+    #content-wrapper {
+      background-color: $CT-B050;
+      height: 100%;
+    }
+    #content-wrapper {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+
+      main {
+        width: calc(100% - 300px);
+        height: calc(100% - 100px);
+      }
+    }
+  }
+  &.pg-B {
+    height: 100%;
+    #__next,
+    #page-wrapper,
+    #content-wrapper {
+      height: 100%;
+    }
+    #content-wrapper {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+
+      main {
+        height: calc(100% - 100px);
+        width: 50%;
+      }
+    }
+    .summary-wrapper {
+      width: 50%;
+    }
+  }
+  &.homePage {
+    height: 100%;
+    #__next,
+    #page-wrapper,
+    #content-wrapper {
+      height: 100%;
+    }
+    .summary-wrapper{
+      display: none;
+    }
+  }
+}
+
+.grid-wrapper {
+  width: 1220px;
+  margin: 0 auto;
+}
+#__next-build-watcher,
+#__next-prerender-indicator {
+  display: none;
+}
+
+
+@mixin common-lg() {}
+
+@mixin common-md() {}
+
+@mixin common-sm1-sm2() {
+  body {
+    &.pg-A {
+      #content-wrapper {
+        main {
+          height: calc(100% - 100px);
+          width: 100%;
+        }
+        #summary-wrapper {
+          display: none;
+        }
+      }
+    }
+  }
+  .grid-wrapper {
+    width: 700px;
+    margin: 0 auto;
+  }
+ 
+}
+
+@mixin common-xs1-xs2() {
+  body {
+    &.pg-A {
+      #content-wrapper {
+        main {
+          width: 100%;
+          height: calc(100% - 90px);
+          padding: 0 0 0 0;
+        }
+        #summary-wrapper {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .grid-wrapper {
+    width: calc(100% - 32px);
+    max-width: 450px;
+  }
+
+}
+
+@media all and (max-width: #{($mq-xs2 - 1) + "px"}) {
+  @include common-xs1-xs2();
+}
+
+@media all and (min-width: #{$mq-xs2 + "px"}) and (max-width: #{($mq-sm1 - 1) + "px"}) {
+  @include common-xs1-xs2();
+}
+
+@media all and (min-width: #{$mq-sm1 + "px"}) and (max-width: #{($mq-sm2 - 1) + "px"}) {
+  @include common-sm1-sm2();
+}
+
+@media all and (min-width: #{$mq-sm2 + "px"}) and (max-width: #{($mq-md - 1) + "px"}) {
+  @include common-sm1-sm2();
+}
+
+@media all and (min-width: #{$mq-md + "px"}) and (max-width: #{($mq-lg - 1) + "px"}) {
+  @include common-lg();
+}
+
+@media all and (min-width: #{$mq-lg + "px"}) {
+  @include common-lg();
+}

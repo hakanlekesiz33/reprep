@@ -1,0 +1,48 @@
+@import "../Base/Colours.scss";
+@import "../Typography/Mixin.scss";
+
+$media-xs1: 1;
+$media-xs2: 1;
+$media-sm1: 2;
+$media-sm2: 2;
+$media-md: 3;
+$media-lg: 3;
+
+@mixin placeholder-animation() {
+    $padding: 0 10px,0 12px,0 12px;
+    $transform:translateY(-30px),translateY(-33px), translateY(-33px);
+    @include media-values2($padding, $transform);
+    @include micro-text($CT-P400);
+}
+
+// Shared function which retrieves values based on media query status
+@mixin media-values2($padding, $transform) {
+    @media all and (max-width: #{($mq-xs2 - 1) + "px"}) {
+        @include css-properties2($padding, $transform,  $media-xs1);
+    }
+
+    @media all and (min-width: #{$mq-xs2 + "px"}) and (max-width: #{($mq-sm1 - 1) + "px"}) {
+        @include css-properties2($padding, $transform,  $media-xs2);
+    }
+
+    @media all and (min-width: #{$mq-sm1 + "px"}) and (max-width: #{($mq-sm2 - 1) + "px"}) {
+        @include css-properties2($padding, $transform,  $media-sm1);
+    }
+
+    @media all and (min-width: #{$mq-sm2 + "px"}) and (max-width: #{($mq-md - 1) + "px"}) {
+        @include css-properties2($padding, $transform,  $media-sm2);
+    }
+
+    @media all and (min-width: #{$mq-md + "px"}) and (max-width: #{($mq-lg - 1) + "px"}) {
+        @include css-properties2($padding, $transform, $media-md);
+    }
+
+    @media all and (min-width: #{$mq-lg + "px"}) {
+        @include css-properties2($padding, $transform, $media-lg);
+    }
+}
+// Shared function which collects css properties based on media query index
+@mixin css-properties2($padding, $transform, $index) {
+    padding: nth($padding, $index);
+    transform: nth($transform, $index);
+}

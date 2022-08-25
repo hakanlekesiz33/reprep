@@ -1,0 +1,54 @@
+@import "../Base/Colours";
+@import "../Base/Globals";
+@import "./Mixin.scss";
+@import "../Typography/Mixin.scss";
+
+.btn-01 {
+  width: 155px;
+  height: 67px;
+  border-radius: 8px;
+  border-bottom-right-radius: 0;
+  cursor: pointer;
+}
+.btn-02 {
+  width: 360px;
+  height: 65px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 0;
+  cursor: pointer;
+}
+@media all and (max-width: #{($mq-xs2 - 1) + "px"}) {
+  .btn-01 {
+    width: 327px;
+    height: 59px;
+    border-radius: 4px;
+  }
+  .btn-02{
+    width: 100%;
+    height: 58px;
+
+  }
+}
+
+@media all and (min-width: #{$mq-xs2 + "px"}) and (max-width: #{($mq-sm1 - 1) + "px"}) {
+  .btn-01 {
+    width: 327px;
+    height: 59px;
+    border-radius: 4px;
+  }
+}
+
+@media all and (min-width: #{$mq-sm1 + "px"}) and (max-width: #{($mq-sm2 - 1) + "px"}) {
+}
+
+@media all and (min-width: #{$mq-sm2 + "px"}) and (max-width: #{($mq-md - 1) + "px"}) {
+}
+
+@media all and (min-width: #{$mq-md + "px"}) and (max-width: #{($mq-lg - 1) + "px"}) {
+}
+
+@media all and (min-width: #{$mq-lg + "px"}) {
+}

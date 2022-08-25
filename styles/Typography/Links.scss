@@ -1,0 +1,16 @@
+﻿@import "../Base/Colours.scss";
+@import "../Base/Globals.scss";
+@import "./Mixin.scss";
+
+
+.lnk-A {
+    @include micro-text($CT-B003);
+}
+.lnk-B{
+    @include standard-text($CT-B900);
+    line-height: 1.5;
+}
+.lnk-C{
+    @include standard-text-bold(#ffffff);
+    line-height: normal;
+}

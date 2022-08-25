@@ -1,0 +1,36 @@
+﻿@import "../Base/Colours.scss";
+@import "../Base/Globals.scss";
+@import "./Mixin.scss";
+
+
+.hdr-A {
+    @include hero-title(#ffffff);
+    line-height: 1.08;
+}
+.hdr-B {
+    @include xsmall-title($CT-B900);
+    line-height: normal;
+}
+.hdr-C {
+    @include caption($CT-B900);
+    line-height: normal;
+}
+.hdr-D {
+    @include medium-title($CT-B900);
+    line-height: normal;
+    font-weight: 500;
+}
+.hdr-E {
+    @include xsmall-title($CT-B700);
+    line-height: normal;
+    font-weight: 500;
+}
+.hdr-F{
+    @include xsmall-title($CT-B800);
+    line-height: normal;
+    font-weight: 500;
+}
+.hdr-G{
+    @include micro-text($CT-B500);
+    line-height: normal;
+}

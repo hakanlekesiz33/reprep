@@ -1,0 +1,369 @@
+@import "../Base/Colours.scss";
+@import "../Base/Globals.scss";
+@import "../Typography/Mixin.scss";
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+
+    &.noscroll {
+        position: fixed;
+        width: 100%;
+        overflow-y: scroll;
+    }
+}
+
+#content-wrapper {
+    z-index: 0;
+    overflow: hidden;
+    &:after {
+        content: '';
+        display: block;
+        visibility: hidden;
+        position: absolute;
+        z-index: 100;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: black;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    &.overlay {
+        &:after {
+            visibility: visible;
+            opacity: 0.3;
+        }
+    }
+}
+
+//-> Modal & overlay styles
+
+.f-modal-content {
+    display: none;
+}
+
+#modal-wrapper,
+#overlay-wrapper {
+    visibility: hidden;
+    display: flex;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.6);
+    opacity: 0;
+    transition: opacity 0.2s 0s, visibility 0s 0.2s;
+
+    &.on {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity 0.2s 0s, visibility 0s 0s;
+    }
+}
+
+@mixin modal-header-icon($type) {
+    $content: '';
+
+    @if $type == "info" {
+        $content: 'i';
+        background-color: #5c61a7;
+    }
+    @else if $type == "error" {
+        $content: '!';
+        background-color: #5c61a7;
+    }
+    @else if $type == "warning" {
+        $content: '!';
+        background-color: #5c61a7;
+    }
+
+    &::before {
+        content: $content;
+        display: flex;
+        width: 25px;
+        height: 25px;
+        margin-right: 10px;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        font-size: 15px;
+
+        @if $type == "info" {
+            padding-top: 2px;
+            font-size: 17px;
+            font-weight: 600;
+            font-family: 'Times New Roman';
+            font-style: italic;
+        }
+    }
+}
+
+#modal-wrapper {
+    .f-content {
+        width: 800px;
+        height: auto;
+        border-radius: 2px;
+        background-color: #fff;
+
+        .f-header {
+            display: flex;
+            height: 65px;
+            padding: 0 10px 0 30px;
+            align-items: center;
+            font-size: 17px;
+            font-weight: 500;
+            color: #fff;
+
+            .f-close {
+                display: block;
+                width: 40px;
+                height: 40px;
+                margin-left: auto;
+                border-radius: 50%;
+                background-size: 10px 10px;
+                //background-image: url(/Content/Images/Icons/close-light.png);
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-color: rgba(255, 255, 255, 0.0);
+                transition: background-color 0.3s;
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.2);
+                }
+            }
+        }
+
+        .f-body {
+            padding: 30px 30px 30px 30px;
+            line-height: 20px;
+            font-weight: 400;
+            font-size: 14px;
+            color: #565656;
+        }
+
+        .f-footer {
+            display: flex;
+            height: 50px;
+            justify-content: flex-end;
+            padding: 0 30px 0 30px;
+
+            .f-submit {
+                display: flex;
+                height: 30px;
+                padding: 0 10px 0 10px;
+                align-items: center;
+                border-radius: 2px;
+                background-color: #565656;
+                font-size: 12px;
+                font-weight: normal;
+                letter-spacing: 0.3px;
+                color: #5c61a7;
+                transition: background-color 0.3s;
+
+                &:hover {
+                    text-decoration: none;
+                    background-color: #b2b2b2;
+                }
+            }
+        }
+    }
+
+    $left-right-side-width: 300;
+
+    &.leftSideModal,
+    &.rightSideModal {
+        .f-content {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: auto;
+            right:auto;
+            width: #{$left-right-side-width}px;
+            transform: translateX(0);
+            transition: transform 0.5s; // transform transition is for left or right side modal types.
+
+            .f-header {
+                display: none;
+            }
+
+            .f-body {
+                height: 100%;
+                padding: 20px 20px 20px 20px;
+                overflow: auto;
+            }
+
+            .f-footer {
+                display: none;
+            }
+        }
+    }
+
+    &.leftSideModal {
+        .f-content {
+            left: -#{$left-right-side-width}px;
+        }
+
+        &.on {
+            .f-content {
+                transform: translateX(#{$left-right-side-width}px);
+            }
+        }
+    }
+
+    &.rightSideModal {
+        .f-content {
+            right: -#{$left-right-side-width}px;
+        }
+
+        &.on {
+            .f-content {
+                transform: translateX(-#{$left-right-side-width}px);
+            }
+        }
+    }
+
+    &.modalError {
+        .f-content {
+            width: 520px;
+
+            .f-header {
+                @include modal-header-icon('error');
+            }
+
+            .f-footer {
+                display: none;
+            }
+        }
+    }
+
+    &.modalConfirmation {
+        .f-content {
+            width: 520px;
+
+            .f-header {
+                @include modal-header-icon('warning');
+            }
+        }
+    }
+
+    &.modalAgreement {
+        .f-content {
+            width: 700px;
+            height: 500px;
+
+            .f-header {
+                @include modal-header-icon('info');
+            }
+
+            .f-body {
+                height: 380px;
+                padding: 0 20px 0 30px;
+                margin: 30px 10px 0 0;
+                overflow: auto;
+                font-size: 13px;
+                font-weight: 400;
+                letter-spacing: 0.2px;
+                color:  #383838;
+                line-height: 20px;
+                color:#929292;
+
+                h5 {
+                    margin: 0 0 10px 0;
+                    font-weight: 600;
+                    font-size: 16px;
+                    color: #6a6a6a;
+                }
+
+                h6 {
+                    font-weight: 500;
+                    margin: 15px 0 10px 0;
+                    color: #6a6a6a;
+                }
+
+                span {
+                    font-weight: 500;
+                    color: #6a6a6a;
+                }
+
+                p {
+                    margin: 0 0 5px 0;
+                }
+
+                ul.level1 {
+                    & > li {
+                        margin: 0 0 25px 0;
+                    }
+                }
+
+                ul.level2 {
+                    & > li {
+                        margin: 0 0 10px 0;
+                    }
+                }
+
+                ul.level3 {
+                    margin: 5px 0 0 0;
+
+                    & > li {
+                        margin: 0 0 5px 0;
+                    }
+                }
+
+                ul.level4 {
+                    margin: 5px 0 0 5px;
+
+                    & > li {
+                        margin: 0 0 5px 0;
+                    }
+                }
+
+                .list-A {
+                    li {
+                        padding-left: 10px;
+
+                        &::before {
+                            content: '-';
+                            position: absolute;
+                            left: 0;
+                        }
+                    }
+                }
+            }
+
+            .f-footer {
+                display: none;
+            }
+        }
+    }
+}
+/// End of modal & overlay styles
+//-> Media Query Styling
+@media all and (max-width: #{($mq-xs2 - 1) + "px"}) {
+}
+
+@media all and (min-width: #{$mq-xs2 + "px"}) and (max-width: #{($mq-sm1 - 1) + "px"}) {
+}
+
+@media all and (min-width: #{$mq-sm1 + "px"}) and (max-width: #{($mq-sm2 - 1) + "px"}) {
+}
+
+@media all and (min-width: #{$mq-sm2 + "px"}) and (max-width: #{($mq-md - 1) + "px"}) {
+}
+
+@media all and (min-width: #{$mq-md + "px"}) and (max-width: #{($mq-lg - 1) + "px"}) {
+}
+
+@media all and (min-width: #{$mq-lg + "px"}) {
+}
+/// End of media Query Styling

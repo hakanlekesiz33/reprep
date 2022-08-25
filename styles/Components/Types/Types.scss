@@ -1,0 +1,342 @@
+@import "../../Base/Colours.scss";
+@import "../../Base/Globals.scss";
+
+@mixin common-lg() {
+    .type01{
+        margin-top:75px;
+        .gridWrapper {
+        }
+        .title{
+            color: #1a1a18;
+            font-size: 26px;
+            font-weight: 400;
+            letter-spacing: .7px;
+            line-height: 34px;
+
+        }
+        .sub-title{
+            color: #1a1a18;
+            letter-spacing: .7px;
+            line-height: 34px;
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 38px;
+        }
+        .desc{
+            width: 650px;
+            line-height: 22px;
+            color: #464646;
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: .02em;
+        }
+        .listContainer{
+          display:flex;
+          margin-top: 65px;
+          .item{
+              width: 33.3%;
+              display:flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              padding: 15px;;
+              margin:0 15px 15px 0;
+              border: 1px solid #bbbbbb;
+              color: #141413;
+              letter-spacing: .3px;
+              
+              img{
+                  width: 110px;
+                  height: 110px;
+              }
+              &-name{
+                  font-size: 13px;
+                  font-weight: 600;
+                  
+              }
+              &-desc{
+                  font-size: 14px;
+                  font-weight: 500;
+              }
+          }
+          :nth-child(5n){
+            margin-right:0;
+          }
+      }
+    }
+    .type02 {
+      .showCaseImage {
+        height: 250px;
+        text-align: center;
+        background-color: #5c798b;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+      .gridWrapper {
+      }
+      .cbox01A {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 0 0 0;
+        margin-top: -50px;
+        margin-bottom: 30px;
+    
+        .citem01 {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 160px;
+          height: 160px;
+          border: 1px solid #ededed;
+          border-radius: 5px;
+          background-color: #fff;
+          overflow: hidden;
+          img {
+            display: block;
+            width: 137px;
+            height: auto;
+          }
+        }
+        .citem02 {
+          width: 520px;
+          margin: 85px 0 0 40px;
+        }
+        .citem03 {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 221px;
+          height: 73px;
+          border-radius: 20px;
+          border-top-left-radius: 0;
+          background-color: #b0dfda;
+          margin-top: 78px;
+        }
+      }
+      .cbox01B {
+        padding: 35px 0 35px 0;
+        border-top: 1px solid #ededed;
+        border-bottom: 1px solid #ededed;
+    
+        .citem01 {
+          display: inline-block;
+          width: 35%;
+          padding-right: 10%;
+          vertical-align: top;
+        }
+        .citem02 {
+          display: inline-block;
+          width: 65%;
+        }
+      }
+    }
+    .type03{
+      margin-top:75px;
+  
+      .grid-wrapper {
+        border-top: 1px solid #464646;
+      }
+     
+      .listContainer{
+          display:flex;
+          margin-top: 65px;
+          .item{
+              width: 33.3%;
+              display:flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              padding: 15px;;
+              margin:0 15px 15px 0;
+              border: 1px solid #bbbbbb;
+              color: #141413;
+              letter-spacing: .3px;
+              
+              img{
+                  width: 110px;
+                  height: 110px;
+              }
+              &-name{
+                  font-size: 13px;
+                  font-weight: 600;
+                  
+              }
+              &-desc{
+                  font-size: 14px;
+                  font-weight: 500;
+              }
+          }
+          :nth-child(5n){
+            margin-right:0;
+          }
+      }
+  }
+}
+
+@mixin common-sm1-sm2() {
+  .type02 {
+    .showCaseImage {
+      height: 250px;
+      text-align: center;
+      background-color: #5c798b;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+    .gridWrapper {
+    }
+    .cbox01A {
+      display: flex;
+      flex-direction:column;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: -50px;
+      margin-bottom: 30px;
+  
+      .citem01 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 160px;
+        height: 160px;
+        border: 1px solid #ededed;
+        border-radius: 5px;
+        background-color: #fff;
+        overflow: hidden;
+        img {
+          display: block;
+          width: 137px;
+          height: auto;
+        }
+      }
+      .citem02 {
+        margin: 85px 0 0 0;
+      }
+      .citem03 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 221px;
+        height: 73px;
+        border-radius: 20px;
+        border-top-left-radius: 0;
+        background-color: #b0dfda;
+        margin-top: 78px;
+      }
+    }
+    .cbox01B {
+      padding: 35px 0 35px 0;
+      border-top: 1px solid #ededed;
+      border-bottom: 1px solid #ededed;
+  
+      .citem01 {
+        display: inline-block;
+        width: 35%;
+        padding-right: 10%;
+        vertical-align: top;
+      }
+      .citem02 {
+        display: inline-block;
+        width: 65%;
+      }
+    }
+  }
+}
+
+@mixin common-xs1-xs2() {
+  .type02 {
+    .showCaseImage {
+      height: 110px;
+      text-align: center;
+      background-color: #5c798b;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+    .gridWrapper {
+    
+    }
+    .cbox01A {
+      display: flex;
+      flex-direction:row-reverse;
+      justify-content: space-between;
+      margin-top: -50px;
+      margin-bottom: 30px;
+  
+      .citem01 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 100px;
+        border: 1px solid #ededed;
+        border-radius: 5px;
+        background-color: #fff;
+        overflow: hidden;
+        img {
+          display: block;
+          width: 80px;
+          height: auto;
+        }
+      }
+      .citem02 {
+        margin: 85px 0 0 0;
+      }
+      .citem03 {
+        display: flex;
+        position:fixed;
+        bottom: 0;
+        justify-content: center;
+        align-items: center;
+        width: calc(100% + 32px);
+        left: -16px;
+        height: 73px;
+        border-radius: 20px;
+        border-top-left-radius: 0;
+        background-color: #b0dfda;
+        z-index: 50;
+      }
+    }
+    .cbox01B {
+      padding: 35px 0 35px 0;
+      border-top: 1px solid #ededed;
+      border-bottom: 1px solid #ededed;
+  
+      .citem01 {
+        display: none;
+        
+      }
+      .citem02 {
+        display: inline-block;
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+
+@media all and (max-width: #{($mq-xs2 - 1) + "px"}) {
+  @include common-xs1-xs2();
+}
+
+@media all and (min-width: #{$mq-xs2 + "px"}) and (max-width: #{($mq-sm1 - 1) + "px"}) {
+  @include common-xs1-xs2();
+}
+
+@media all and (min-width: #{$mq-sm1 + "px"}) and (max-width: #{($mq-sm2 - 1) + "px"}) {
+  @include common-sm1-sm2();
+}
+
+@media all and (min-width: #{$mq-sm2 + "px"}) and (max-width: #{($mq-md - 1) + "px"}) {
+  @include common-sm1-sm2();
+}
+
+@media all and (min-width: #{$mq-md + "px"}) and (max-width: #{($mq-lg - 1) + "px"}) {
+  @include common-lg();
+}
+
+@media all and (min-width: #{$mq-lg + "px"}) {
+  @include common-lg();
+}

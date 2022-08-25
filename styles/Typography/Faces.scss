@@ -1,0 +1,142 @@
+﻿@import "../Base/Colours.scss";
+@import "./Mixin.scss";
+
+.ff-A {
+  @include standard-text($CT-B800);
+  line-height: 1.5;
+}
+
+.ff-B {
+  @include small-button(#ffffff);
+  line-height: normal;
+}
+
+.ff-C {
+  @include micro-text($CT-B500);
+  line-height: normal;
+}
+
+.ff-D {
+  @include standard-text($CT-P800);
+  line-height: 1.5;
+}
+
+.ff-E {
+  @include standard-text($CT-B300);
+  line-height: 1.5;
+  
+}
+.ff-F {
+  @include small-button(#bbb);
+  line-height: normal;
+}
+.ff-G {
+  @include large-text($CT-B900);
+  line-height: 1.44;
+}
+.ff-H {
+  @include small-button($CT-B900);
+  line-height: normal;
+}
+.ff-I {
+  @include small-button(#ffffff);
+  line-height: normal;
+  font-weight: 500;
+}
+.ff-J {
+  @include small-text($CT-B004);
+  line-height: normal;
+  font-weight: 500;
+}
+.ff-K {
+  @include small-text($CT-B005);
+  line-height: normal;
+  font-weight: 500;
+}
+.ff-L {
+  @include caption($CT-B500);
+  line-height: normal;
+}
+.ff-M {
+  @include caption-01($CT-B900);
+  line-height: 1.5;
+}
+.ff-N {
+  @include micro-text($CT-B008);
+  line-height: normal;
+}
+.ff-O {
+  @include caption($CT-B009);
+  line-height: normal;
+}
+.ff-P {
+  @include small-text($CT-B900);
+  line-height: 1.86;
+}
+
+@media all and (max-width: #{($mq-xs2 - 1) + "px"}) {
+  .ff-A {
+    line-height: 1.71;
+  }
+
+  .ff-B {
+    line-height: normal;
+  }
+
+  .ff-C {
+    line-height: normal;
+  }
+
+  .ff-D {
+    line-height: 1.71;
+  }
+
+  .ff-E {
+    line-height: 1.71;
+  }
+  .ff-F {
+    line-height: normal;
+  }
+  
+}
+
+@media all and (min-width: #{$mq-xs2 + "px"}) and (max-width: #{($mq-sm1 - 1) + "px"}) {
+  .ff-A {
+    line-height: 1.71;
+  }
+
+  .ff-B {
+    line-height: normal;
+  }
+
+  .ff-C {
+    line-height: normal;
+  }
+
+  .ff-D {
+    line-height: 1.71;
+  }
+
+  .ff-E {
+    line-height: 1.71;
+  }
+  .ff-F {
+    line-height: normal;
+  }
+}
+
+@media all and (min-width: #{$mq-sm1 + "px"}) and (max-width: #{($mq-sm2 - 1) + "px"}) {
+}
+
+@media all and (min-width: #{$mq-sm2 + "px"}) and (max-width: #{($mq-md - 1) + "px"}) {
+}
+
+@media all and (min-width: #{$mq-md + "px"}) and (max-width: #{($mq-lg - 1) + "px"}) {
+}
+
+@media all and (min-width: #{$mq-lg + "px"}) {
+}
+
+.color-green{
+  color: $CT-B003!important;
+}

@@ -1,0 +1,665 @@
+@import "../Base/Colours.scss";
+@import "../Base/Globals.scss";
+@import "./Mixin.scss";
+@import "../Typography/Mixin.scss";
+
+.f-answer {
+  height: 100%;
+  overflow-y: auto;
+
+  .grid-wrapper {
+    padding: 150px 0 0 100px;
+    height: 100%;
+  }
+
+  .f-question-A {
+    width: 639px;
+    padding: 24px 36px;
+    border-radius: 16px;
+    border-top-left-radius: 0;
+    box-shadow: 0 -50px 100px 0 rgba(0, 0, 0, 0.03);
+    border: solid 1px $CT-B002;
+    background-color: #ffffff;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: -56px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: $CT-B003;
+    }
+  }
+
+  .f-answer-group-A {
+    padding: 0 36px;
+    margin: 20px 0 0 0;
+  }
+
+  .f-answer-group-B {
+    padding: 0 36px;
+    margin: 14px 0 0 0;
+
+    &.first {
+      margin-top: 28px;
+    }
+  }
+
+  .f-submit-group-A {
+    position: absolute;
+    bottom: 50px;
+    left: 220px;
+    display: flex;
+    align-items: center;
+
+    button {
+      background-color: $CT-B003;
+      transition: background-color 0.3s;
+      &:hover {
+        background-color: $CT-P400;
+      }
+    }
+    &.fromSummary {
+      button {
+        border-bottom-right-radius: 8px;
+      }
+    }
+    .enterText {
+      margin-left: 20px;
+    }
+  }
+
+  .f-submit-group-B {
+    position: absolute;
+    bottom: 50px;
+    left: 44px;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+      border: 1px solid #ddd;
+
+      border-bottom-right-radius: 8px;
+      border-top-left-radius: 0;
+      //transition: background-color 0.3s;
+      &:hover {
+        background-color: #ddd;
+        color: #666;
+      }
+    }
+
+    &.summary {
+      padding: 0 30px;
+      left: 364px;
+
+      a {
+        color: #ffffff;
+        text-align: center;
+        background-color: $CT-S900;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: 8px;
+      }
+    }
+  }
+
+  .f-datePicker-group-A {
+    display: flex;
+    width: 594px;
+    height: 75px;
+    padding: 24px 36px;
+    border-radius: 8px;
+    border: solid 1px $CT-B001;
+    background-color: $CT-B100;
+    border-top-right-radius: 0;
+
+    .placeholder-A {
+      left: 45px;
+    }
+
+    .react-datepicker-ignore-onclickoutside,
+    .react-datepicker__input-container input {
+      opacity: 0;
+      background-color: $CT-B050;
+      @include standard-text($CT-B800);
+      line-height: 1.5;
+    }
+
+    &.true {
+      .react-datepicker-ignore-onclickoutside,
+      .react-datepicker__input-container input {
+        opacity: 1;
+      }
+
+      display: flex;
+      background-color: $CT-B050;
+      border: solid 1px $CT-P100;
+
+      .placeholder-A {
+        background-color: $CT-B050;
+        left: 19px;
+        @include placeholder-animation();
+        background-color: $CT-B050;
+      }
+    }
+  }
+  .f-input-group-A {
+    display: flex;
+    justify-content: space-between;
+    width: 594px;
+    margin-left: 36px;
+    .f-answer-group-B {
+      width: 48%;
+      padding: 0;
+      margin: 14px 0 0 0;
+      &.address {
+        width: 68%;
+      }
+      &.postalCode {
+        width: 28%;
+      }
+
+      .placeholder-A {
+        left: 36px;
+      }
+      .tb-A {
+        width: 100%;
+        &.true ~ .placeholder-A {
+          left: 20px;
+        }
+        &:focus ~ .placeholder-A {
+          left: 20px !important;
+        }
+      }
+      &.first {
+        margin-top: 28px;
+      }
+    }
+  }
+  .f-info-area {
+    margin-top: 15px;
+    padding-left: 35px;
+    width: 594px;
+    &::before {
+      content: "!";
+      background-color: orange;
+      position: absolute;
+      left: 0;
+      top: calc(50% - 14px);
+      width: 28px;
+      height: 28px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 16px;
+      color: #FFF;
+      font-weight: bold;
+      border-radius: 50%;
+    }
+  }
+}
+
+.inputText-typeA {
+  width: 554px;
+  height: 75px;
+  padding: 27px 30px;
+  border-radius: 10px;
+  border: solid 1px #efefef;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+
+  label {
+    width: 130px;
+    height: 15px;
+    position: absolute;
+    left: 30px;
+    top: calc(50% - 7.5px);
+    z-index: 2;
+  }
+
+  .tb-A {
+    width: 100%;
+    padding-left: 130px;
+  }
+}
+
+.inputText-typeC {
+  margin-bottom: 18px;
+}
+
+.modalForm-01 {
+  width: 100%;
+
+  .f-answer-group-C {
+    margin: 20px 0 0 0;
+  }
+}
+
+.loginModalTitle {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.loginModalTitle2 {
+  text-align: center;
+  margin: 25px 0;
+}
+
+.alternativeLoginArea {
+  span {
+    display: block;
+    margin-bottom: 8px;
+  }
+}
+
+.loginModalLink {
+  display: block;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.requestStep6,
+.requestStep7,
+.requestStep8 {
+  .f-question-A {
+    width: 666px;
+  }
+
+  .css-2b097c-container {
+    width: 594px;
+  }
+}
+
+.f-submit-group-C {
+  button {
+    background-color: $CT-P400;
+  }
+}
+
+.placeholder-A {
+  position: absolute;
+  left: 81px;
+  top: 27px;
+  z-index: 100000;
+  transition: all 0.3s;
+  @include standard-text($CT-B400);
+  line-height: normal;
+  cursor: text;
+}
+
+.placeholder-B {
+  position: absolute;
+  left: 35px;
+  top: 27px;
+  z-index: 100000;
+  transition: all 0.3s;
+  @include standard-text($CT-B400);
+  line-height: normal;
+  cursor: text;
+}
+
+@mixin common-lg() {
+}
+
+@mixin common-md() {
+}
+
+@mixin common-sm1-sm2() {
+  .f-answer {
+    .grid-wrapper {
+      padding: 80px 0 180px 0;
+    }
+
+    .f-question-A {
+      &::before {
+        display: none;
+      }
+    }
+
+    .f-submit-group-A {
+      left: 175px;
+    }
+
+    .f-submit-group-B {
+      left: 0;
+
+      &.summary {
+        left: 320px;
+      }
+    }
+
+    .f-answer-group-A {
+      width: 603px;
+      padding: 0;
+      margin-left: auto;
+    }
+
+    .f-answer-group-B {
+      width: 603px;
+      margin-left: auto;
+      padding: 0;
+
+      input {
+        width: 100%;
+      }
+
+      .f-datePicker-group-A {
+        width: 603px;
+      }
+    }
+    .f-answer-group-D {
+      width: 280px;
+      margin-left: auto;
+      padding: 0;
+
+      input {
+        width: 100%;
+      }
+    }
+    .f-input-group-A {
+      width: 603px;
+      margin-left: auto;
+      .f-answer-group-B {
+        padding: 0;
+
+        input {
+          width: 100%;
+        }
+
+        .f-datePicker-group-A {
+          width: 603px;
+        }
+      }
+    }
+  }
+
+  .requestStep6,
+  .requestStep7,
+  .requestStep8 {
+    .css-2b097c-container {
+      width: 603px;
+    }
+  }
+
+  .placeholder-A {
+    left: 36px;
+  }
+}
+
+@mixin common-xs1-xs2() {
+  .f-answer {
+    .grid-wrapper {
+      padding: 32px 0 0 0;
+      height: auto;
+      min-height: calc(100% - 60px);
+    }
+
+    .f-question-A {
+      width: 297px;
+      padding: 12px 16px;
+      border-radius: 8px;
+      z-index: 99;
+
+      &::before {
+        display: none;
+      }
+    }
+
+    .f-answer-group-A {
+      padding: 0 12px;
+      margin: 18px 0 0 0;
+      margin-left: auto;
+    }
+
+    .f-answer-group-B {
+      margin: 12px 0 0 0;
+      padding: 0px 12px;
+      z-index: 99;
+
+      &.first {
+        margin-top: 20px;
+      }
+    }
+    .f-answer-group-D {
+      margin: 12px 0 0 0;
+      padding: 0px 12px;
+      z-index: 99;
+
+      &.first {
+        margin-top: 20px;
+      }
+    }
+    .f-submit-group-A {
+      position: static;
+      margin: 200px 0 0 0;
+      z-index: 98;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 100px 0 rgba(0, 0, 0, 0.05);
+      background-color: #fafafa;
+      .btn-submit {
+        width: calc(50% - 25px);
+        position: absolute;
+        left: auto;
+        right: 10px;
+        bottom: 20px;
+        border-bottom-right-radius: 0;
+      }
+      &.fromSummary {
+        .btn-submit {
+          width: calc(40% - 20px);
+          position: absolute;
+          left: calc(20% + 20px);
+          right: auto;
+          bottom: 20px;
+          border-bottom-right-radius: 8px;
+        }
+      }
+      .enterText {
+        display: none;
+      }
+    }
+
+    .f-submit-group-B {
+      position: static;
+      margin: 0;
+      z-index: 98;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #ffffff;
+      a {
+        width: calc(50% - 25px);
+        position: absolute;
+        left: 10px;
+        right: 0;
+        bottom: 20px;
+      }
+      &.fromSummary {
+        a {
+          width: 20%;
+          left: 0;
+          right: auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-indent: -9999px;
+          .backIcon {
+            position: absolute;
+            left: calc(50% - 12px);
+            top: calc(50% - 12px);
+            width: 24px;
+            height: 24px;
+            z-index: 1;
+            background-image: url("/static/images/icons/back-button.png");
+            background-repeat: no-repeat;
+            background-position: center center;
+          }
+        }
+      }
+      &.summary {
+        left: auto;
+        padding: 0;
+        a {
+          position: absolute;
+          left: auto;
+          right: 0;
+          bottom: 20px;
+          width: calc(40% - 20px);
+          border-bottom-right-radius: 0;
+        }
+      }
+    }
+
+    .f-datePicker-group-A {
+      width: 100%;
+      height: 59px;
+      border-radius: 8px;
+      border-top-right-radius: 0;
+
+      .react-datepicker-popper {
+        z-index: 999999;
+      }
+
+      &.true {
+        .placeholder-A {
+          left: 10px;
+          top: 22px;
+        }
+      }
+
+      #datepicker {
+        position: absolute;
+        top: -17px;
+      }
+    }
+    .f-input-group-A {
+      flex-direction: column;
+      width: 100%;
+      margin-left: 0;
+      .f-answer-group-B {
+        width: 100%;
+        margin: 12px 0 0 0;
+        padding: 0px 12px;
+        z-index: 99;
+        &.address {
+          width: 100%;
+        }
+        &.postalCode {
+          width: 100%;
+        }
+        .placeholder-A {
+          left: 48px;
+        }
+        .tb-A {
+          width: 100%;
+          &.true ~ .placeholder-A {
+            left: 38px;
+          }
+          &:focus ~ .placeholder-A {
+            left: 38px !important;
+          }
+        }
+        &.first {
+          margin-top: 20px;
+        }
+      }
+    }
+    .f-info-area {
+      width: 100%;
+     
+    }
+  }
+
+  .requestStep6,
+  .requestStep7,
+  .requestStep8 {
+    .f-question-A {
+      width: 297px;
+    }
+
+    .css-2b097c-container {
+      width: 100%;
+    }
+  }
+
+  .inputText-typeA {
+    width: 554px;
+    height: 75px;
+    padding: 27px 30px;
+    border-radius: 10px;
+    border: solid 1px #efefef;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+
+    label {
+      width: 130px;
+      height: 15px;
+      position: absolute;
+      left: 30px;
+      top: calc(50% - 7.5px);
+      z-index: 2;
+    }
+
+    .tb-A {
+      width: 100%;
+      padding-left: 130px;
+    }
+  }
+
+  .placeholder-A {
+    left: 48px;
+    top: 18px;
+    line-height: 1.71;
+  }
+  .placeholder-B {
+    left: 20px;
+    top: 20px;
+    @include standard-text($CT-B400);
+    font-size: 14px!important;
+  }
+}
+
+@media all and (max-width: #{($mq-xs2 - 1) + "px"}) {
+  @include common-xs1-xs2();
+}
+
+@media all and (min-width: #{$mq-xs2 + "px"}) and (max-width: #{($mq-sm1 - 1) + "px"}) {
+  @include common-xs1-xs2();
+}
+
+@media all and (min-width: #{$mq-sm1 + "px"}) and (max-width: #{($mq-sm2 - 1) + "px"}) {
+  @include common-sm1-sm2();
+}
+
+@media all and (min-width: #{$mq-sm2 + "px"}) and (max-width: #{($mq-md - 1) + "px"}) {
+  @include common-sm1-sm2();
+}
+
+@media all and (min-width: #{$mq-md + "px"}) and (max-width: #{($mq-lg - 1) + "px"}) {
+  @include common-lg();
+}
+
+@media all and (min-width: #{$mq-lg + "px"}) {
+  @include common-lg();
+}

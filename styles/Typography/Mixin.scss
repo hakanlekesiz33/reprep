@@ -1,0 +1,156 @@
+﻿@import "../Base/Media.scss";
+
+/*
+    README:
+    Follow following steps:
+    1- Setup media query index numbers
+    2- Determine mixin types (names)
+    3- Define font-size, font-weight, and letter-spacing arrays based on media query status for each mixin type
+*/
+
+// Media query index numbers from smallest to largest.
+$media-xs1: 1;
+$media-xs2: 1;
+$media-sm1: 2;
+$media-sm2: 2;
+$media-md: 3;
+$media-lg: 3;
+
+@mixin hero-title($color, $letterspacing: (normal, normal, normal)) {
+    $sizes: 40px, 60px, 80px;
+    $weights: bold, bold, bold;
+    @include media-values($sizes, $weights, $letterspacing);
+    color: $color;
+}
+
+@mixin large-title($color, $letterspacing: (normal, normal, normal)) {
+    $sizes: 60px, 60px, 60px;
+    $weights: bold, bold, bold;
+    @include media-values($sizes, $weights, $letterspacing);
+    color: $color;
+}
+
+@mixin large-button($color, $letterspacing: (normal, normal, normal)) {
+    $sizes: 60px, 60px, 60px;
+    $weights: bold, bold, bold;
+    @include media-values($sizes, $weights, $letterspacing);
+    color: $color;
+}
+@mixin medium-title($color, $letterspacing: (normal, normal, normal)) {
+    $sizes: 48px, 48px, 48px;
+    $weights: 500, 500, 500;
+    @include media-values($sizes, $weights, $letterspacing);
+    color: $color;
+}
+
+@mixin small-title($color, $letterspacing: (normal, normal, normal)) {
+    $sizes: 34px, 34px, 34px;
+    $weights: 500, 500, 500;
+    @include media-values($sizes, $weights, $letterspacing);
+    color: $color;
+}
+
+@mixin xsmall-title($color, $letterspacing: (normal, normal, normal)) {
+    $sizes: 24px, 24px, 24px;
+    $weights: 500, 500, 500;
+    @include media-values($sizes, $weights, $letterspacing);
+    color: $color;
+}
+
+@mixin micro-title($color, $letterspacing: (normal, normal, normal)) {
+    $sizes: 21px, 21px, 21px;
+    $weights: 500, 500, 500;
+    @include media-values($sizes, $weights, $letterspacing);
+    color: $color;
+}
+
+@mixin large-text($color, $letterspacing: (normal, normal, normal)) {
+    $sizes: 18px, 18px, 18px;
+    $weights: normal, normal, normal;
+    @include media-values($sizes, $weights, $letterspacing);
+    color: $color;
+}
+
+@mixin standard-text($color, $letterspacing: (normal, normal, normal)) {
+    $sizes: 16px, 16px, 16px;
+    $weights: normal, normal, normal;
+    @include media-values($sizes, $weights, $letterspacing);
+    color: $color;
+}
+@mixin standard-text-bold($color, $letterspacing: (normal, normal, normal)) {
+    $sizes: 16px, 16px, 16px;
+    $weights: bold, bold, bold;
+    @include media-values($sizes, $weights, $letterspacing);
+    color: $color;
+}
+@mixin small-text($color, $letterspacing: (normal, normal, normal)) {
+    $sizes: 14px, 14px, 14px;
+    $weights: normal, normal, normal;
+    @include media-values($sizes, $weights, $letterspacing);
+    color: $color;
+}
+@mixin small-text-2($color, $letterspacing: (normal, normal, normal)) {
+    $sizes: 13px, 13px, 13px;
+    $weights: normal, normal, normal;
+    @include media-values($sizes, $weights, $letterspacing);
+    color: $color;
+}
+
+@mixin small-button($color, $letterspacing: (normal, normal, normal)) {
+    $sizes: 14px, 14px, 14px;
+    $weights: normal, normal, normal;
+    @include media-values($sizes, $weights, $letterspacing);
+    color: $color;
+}
+
+@mixin caption($color, $letterspacing: (normal, normal, normal)) {
+    $sizes: 12px, 12px, 12px;
+    $weights: normal, normal, normal;
+    @include media-values($sizes, $weights, $letterspacing);
+    color: $color;
+}
+@mixin caption-01($color, $letterspacing: (normal, normal, normal)) {
+    $sizes: 12px, 12px, 12px;
+    $weights: 500, 500, 500;
+    @include media-values($sizes, $weights, $letterspacing);
+    color: $color;
+}
+@mixin micro-text($color, $letterspacing: (normal, normal, normal)) {
+    $sizes: 11px, 11px, 11px;
+    $weights: normal, normal, normal;
+    @include media-values($sizes, $weights, $letterspacing);
+    color: $color;
+}
+
+// Shared function which retrieves values based on media query status
+@mixin media-values($sizes, $weights, $letterspacing) {
+    @media all and (max-width: #{($mq-xs2 - 1) + "px"}) {
+        @include css-properties($sizes, $weights, $letterspacing, $media-xs1);
+    }
+
+    @media all and (min-width: #{$mq-xs2 + "px"}) and (max-width: #{($mq-sm1 - 1) + "px"}) {
+        @include css-properties($sizes, $weights, $letterspacing, $media-xs2);
+    }
+
+    @media all and (min-width: #{$mq-sm1 + "px"}) and (max-width: #{($mq-sm2 - 1) + "px"}) {
+        @include css-properties($sizes, $weights, $letterspacing, $media-sm1);
+    }
+
+    @media all and (min-width: #{$mq-sm2 + "px"}) and (max-width: #{($mq-md - 1) + "px"}) {
+        @include css-properties($sizes, $weights, $letterspacing, $media-sm2);
+    }
+
+    @media all and (min-width: #{$mq-md + "px"}) and (max-width: #{($mq-lg - 1) + "px"}) {
+        @include css-properties($sizes, $weights, $letterspacing, $media-md);
+    }
+
+    @media all and (min-width: #{$mq-lg + "px"}) {
+        @include css-properties($sizes, $weights, $letterspacing, $media-lg);
+    }
+}
+// Shared function which collects css properties based on media query index
+@mixin css-properties($sizes, $weights, $letterspacing, $index) {
+    font-size: nth($sizes, $index);
+    font-weight: nth($weights, $index);
+    letter-spacing: nth($letterspacing, $index);
+}

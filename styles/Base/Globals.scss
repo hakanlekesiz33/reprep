@@ -1,0 +1,38 @@
+$mq-xs1: 0;
+$mq-xs2: 450;
+$mq-sm1: 768;
+$mq-sm2: 1024;
+$mq-md: 1280;
+$mq-lg: 1440;
+
+
+@mixin dynamicTransform($transform...) {
+    -webkit-transform: $transform;
+    -moz-transform: $transform;
+    -ms-transform: $transform;
+    -o-transform: $transform;
+    transform: $transform;
+}
+
+@mixin dynamicTransition($transition...) {
+    -moz-transition: $transition;
+    -o-transition: $transition;
+    -webkit-transition: $transition;
+    transition: $transition;
+}
+
+@mixin rotateTransform($deg, $xOrigin, $yOrigin, $zOrigin: "") {
+    -ms-transform: rotate($deg);
+    -webkit-transform: rotate($deg);
+    transform: rotate($deg);
+    -ms-transform-origin: $xOrigin $yOrigin;
+    -webkit-transform-origin: $xOrigin $yOrigin;
+    transform-origin: $xOrigin $yOrigin;
+}
+
+@mixin dynamicRotateTransition($transitionStyle) {
+    -moz-transition: -moz-transform $transitionStyle;
+    -o-transition: -o-transform $transitionStyle;
+    -webkit-transition: -webkit-transform $transitionStyle;
+    transition: transform $transitionStyle;
+}

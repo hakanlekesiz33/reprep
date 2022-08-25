@@ -1,0 +1,104 @@
+@import "../Base/Colours.scss";
+@import "../Base/Globals.scss";
+@import "./Mixin.scss";
+@import "../Typography/Mixin.scss";
+
+.inputTextArea-typeA {
+  width: 594px;
+  height: 150px;
+  border-radius: 8px;
+  border: solid 1px $CT-B001;
+  background-color: $CT-B100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 28px 0 5px 36px;
+  border-top-right-radius: 0;
+  .placeholder-A {
+    left: 35px;
+    top: 30px;
+    z-index: 99;
+  }
+  .ta-A {
+    width: 100%;
+    height: 100%;
+    padding: 24px 36px;
+    background-color: #f2f2f2;
+    z-index: 99;
+    &.true {
+      background-color: $CT-B050;
+      border: solid 1px $CT-P100;
+
+      & ~ .placeholder-A {
+        @include placeholder-animation();
+        left: 20px;
+        background-color: $CT-B050;
+        transform: translateY(-36px) !important;
+      }
+    }
+
+    &:focus {
+      background-color: $CT-B050;
+      border: solid 1px $CT-P100;
+
+      & ~ .placeholder-A {
+        @include placeholder-animation();
+        left: 20px;
+      background-color: $CT-B050;
+      transform: translateY(-36px) !important;
+      }
+    }
+  }
+}
+
+
+
+
+@mixin common-lg() {}
+
+@mixin common-md() {}
+
+@mixin common-sm1-sm2() {
+  .inputTextArea-typeA {
+    margin-left: auto;
+    width: 603px;
+  }
+}
+
+@mixin common-xs1-xs2() {
+  .inputTextArea-typeA {
+    width: 300px;
+    height: 80px;
+    margin-left: 12px;
+    .ta-A {
+      padding: 14px 10px;
+    }
+    .placeholder-A {
+      top: 27px;
+    }
+  }
+}
+
+@media all and (max-width: #{($mq-xs2 - 1) + "px"}) {
+  @include common-xs1-xs2();
+}
+
+@media all and (min-width: #{$mq-xs2 + "px"}) and (max-width: #{($mq-sm1 - 1) + "px"}) {
+  @include common-xs1-xs2();
+}
+
+@media all and (min-width: #{$mq-sm1 + "px"}) and (max-width: #{($mq-sm2 - 1) + "px"}) {
+  @include common-sm1-sm2();
+}
+
+@media all and (min-width: #{$mq-sm2 + "px"}) and (max-width: #{($mq-md - 1) + "px"}) {
+  @include common-sm1-sm2();
+}
+
+@media all and (min-width: #{$mq-md + "px"}) and (max-width: #{($mq-lg - 1) + "px"}) {
+  @include common-lg();
+}
+
+@media all and (min-width: #{$mq-lg + "px"}) {
+  @include common-lg();
+}

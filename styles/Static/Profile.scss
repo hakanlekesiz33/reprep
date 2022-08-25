@@ -1,0 +1,58 @@
+.rootui-custom {
+  .pg-C {
+    .yaybar {
+      &.rui-yaybar {
+        margin-top: 70px;
+      }
+    }
+    .rui-navbar {
+      .container-fluid {
+        margin-right: 120px;
+        .rui-navbar-content {
+          justify-content: flex-end;
+        }
+        .dropdown-menu {
+          &.hover {
+            position: absolute;
+            will-change: transform;
+            top: 0px;
+            left: 0px;
+            transform: translate3d(14px, 40px, 0px);
+          }
+        }
+      }
+    }
+    .rui-page {
+      .rui-page-content {
+        .col-auto {
+          &.submitContainer {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+          }
+        }
+        .rui-profile-img{
+            cursor: inherit;
+        }
+        .labelforImage {
+          position: absolute;
+          left: 105px;
+          top: 25px;
+          cursor: pointer;
+          img {
+            width: 15px;
+          }
+          input {
+            display: none;
+          }
+        }
+        #profileEdit {
+          .col-12 {
+            padding-top: 30px;
+            padding-left: 0;
+          }
+        }
+      }
+    }
+  }
+}
